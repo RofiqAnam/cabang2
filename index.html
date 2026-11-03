@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelajar NU Magetan | Official Links</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green-dark: #064E3B;
+            --green: #087F5B;
+            --green-light: #D1FAE5;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+            color: var(--green-dark);
+            background:
+                radial-gradient(circle at 10% 10%, #86EFAC 0%, transparent 30%),
+                radial-gradient(circle at 90% 90%, #A7F3D0 0%, transparent 30%),
+                linear-gradient(135deg, #064E3B, #10B981 50%, #F0FDF4);
+            padding: 45px 20px;
+            display: flex;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Top Badge */
+        .top-badge {
+            width: fit-content;
+            margin: 0 auto 22px;
+            padding: 8px 17px;
+            background: rgba(255,255,255,.17);
+            border: 1px solid rgba(255,255,255,.3);
+            border-radius: 50px;
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            backdrop-filter: blur(15px);
+            animation: fadeIn .8s ease;
+        }
+
+        /* Profile Card */
+        .profile {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255,255,255,.14);
+            border: 1px solid rgba(255,255,255,.3);
+            border-radius: 28px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 15px 40px rgba(0,0,0,.08);
+            animation: fadeUp .8s ease;
+        }
+
+        .logo {
+            width: 112px;
+            height: 112px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 8px 25px rgba(0,0,0,.15);
+            margin-bottom: 17px;
+        }
+
+        .profile h1 {
+            color: white;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -.8px;
+        }
+
+        .profile .username {
+            color: #D1FAE5;
+            font-size: 12px;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        .profile .description {
+            color: rgba(255,255,255,.9);
+            font-size: 13px;
+            line-height: 1.8;
+            margin-top: 15px;
+        }
+
+        .motto {
+            margin-top: 18px;
+            display: inline-block;
+            padding: 9px 16px;
+            background: white;
+            color: var(--green-dark);
+            border-radius: 50px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        /* Social Media */
+        .social-section {
+            margin-top: 28px;
+        }
+
+        .section-heading {
+            color: white;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+            text-align: left;
+        }
+
+        .socials {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .social-card {
+            text-decoration: none;
+            color: white;
+            background: rgba(255,255,255,.16);
+            border: 1px solid rgba(255,255,255,.3);
+            border-radius: 18px;
+            padding: 16px 5px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            transition: .3s;
+        }
+
+        .social-card i {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .social-card p {
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .social-card:hover {
+            background: white;
+            color: var(--green);
+            transform: translateY(-5px);
+        }
+
+        /* Main Links */
+        .main-links {
+            margin-top: 30px;
+        }
+
+        .link-list {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            min-height: 78px;
+            background: rgba(255,255,255,.92);
+            border: 1px solid rgba(255,255,255,.8);
+            border-radius: 19px;
+            text-decoration: none;
+            color: var(--green-dark);
+            box-shadow: 0 8px 20px rgba(0,0,0,.07);
+            transition: .35s ease;
+            animation: fadeUp .8s ease both;
+        }
+
+        .link-item:nth-child(1) { animation-delay: .1s; }
+        .link-item:nth-child(2) { animation-delay: .2s; }
+        .link-item:nth-child(3) { animation-delay: .3s; }
+        .link-item:nth-child(4) { animation-delay: .4s; }
+        .link-item:nth-child(5) { animation-delay: .5s; }
+
+        .link-item:hover {
+            transform: translateX(7px);
+            background: white;
+            box-shadow: 0 12px 30px rgba(0,0,0,.13);
+        }
+
+        .link-icon {
+            width: 46px;
+            height: 46px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--green-light);
+            color: var(--green);
+            border-radius: 15px;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .link-content {
+            flex: 1;
+            text-align: left;
+            margin-left: 14px;
+        }
+
+        .link-content h3 {
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .link-content p {
+            font-size: 10px;
+            color: #718078;
+            margin-top: 5px;
+        }
+
+        .arrow {
+            color: var(--green);
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 35px;
+            color: rgba(255,255,255,.85);
+            font-size: 11px;
+            line-height: 2;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            body {
+                padding: 30px 17px;
+            }
+
+            .profile {
+                padding: 25px 15px;
+            }
+
+            .profile h1 {
+                font-size: 21px;
+            }
+
+            .socials {
+                gap: 9px;
+            }
+
+            .link-item {
+                min-height: 72px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="top-badge">
+            <i class="fa-solid fa-circle-check"></i>
+            OFFICIAL DIGITAL PLATFORM
+        </div>
+
+        <!-- PROFILE -->
+        <section class="profile">
+
+            <img
+                src="https://placehold.co/300x300/064E3B/ffffff?text=IPNU+IPPNU"
+                alt="Logo Pelajar NU Magetan"
+                class="logo"
+            >
+
+            <h1>Pelajar NU Magetan</h1>
+
+            <p class="username">@pelajarnumagetan</p>
+
+            <p class="description">
+                Selamat datang di pusat informasi digital
+                Pimpinan Cabang IPNU–IPPNU Kabupaten Magetan.
+            </p>
+
+            <div class="motto">
+                BELAJAR • BERJUANG • BERTAQWA
+            </div>
+
+        </section>
+
+        <!-- SOCIAL MEDIA -->
+        <section class="social-section">
+
+            <h2 class="section-heading">FOLLOW OUR SOCIALS</h2>
+
+            <div class="socials">
+
+                <a href="https://instagram.com/" class="social-card" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                    <p>Instagram</p>
+                </a>
+
+                <a href="https://tiktok.com/" class="social-card" target="_blank">
+                    <i class="fa-brands fa-tiktok"></i>
+                    <p>TikTok</p>
+                </a>
+
+                <a href="https://youtube.com/" class="social-card" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                    <p>YouTube</p>
+                </a>
+
+                <a href="https://facebook.com/" class="social-card" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                    <p>Facebook</p>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- MAIN LINKS -->
+        <section class="main-links">
+
+            <h2 class="section-heading">EXPLORE OUR LINKS</h2>
+
+            <div class="link-list">
+
+                <a href="https://pelajarnumagetan.or.id"
+                   class="link-item"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <div class="link-icon">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+
+                    <div class="link-content">
+                        <h3>Website Resmi</h3>
+                        <p>Kunjungi website Pelajar NU Magetan</p>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="https://instagram.com/"
+                   class="link-item"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <div class="link-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                    <div class="link-content">
+                        <h3>Instagram</h3>
+                        <p>Informasi dan aktivitas terbaru kami</p>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="https://youtube.com/"
+                   class="link-item"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <div class="link-icon">
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+
+                    <div class="link-content">
+                        <h3>YouTube</h3>
+                        <p>Dokumentasi dan video kegiatan</p>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="https://wa.me/6281234567890"
+                   class="link-item"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <div class="link-icon">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+
+                    <div class="link-content">
+                        <h3>Hubungi Kami</h3>
+                        <p>Kontak WhatsApp Pelajar NU Magetan</p>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="#"
+                   class="link-item">
+
+                    <div class="link-icon">
+                        <i class="fa-solid fa-newspaper"></i>
+                    </div>
+
+                    <div class="link-content">
+                        <h3>Berita & Publikasi</h3>
+                        <p>Baca berita kegiatan Pelajar NU Magetan</p>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            Made with <span style="color:#FCA5A5;">♥</span> by
+            <strong>Pelajar NU Magetan</strong>
+
+            <p>Belajar, Berjuang, Bertaqwa</p>
+            <p>© 2026 All Rights Reserved.</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
